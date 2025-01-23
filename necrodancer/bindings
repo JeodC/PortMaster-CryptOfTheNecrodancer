@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Input XML file
+GAMEDIR=$PWD
+XML_FILE="$GAMEDIR/data/save_data.xml"
+
+# Keybinding data to insert or update
+KEYBINDINGS=(
+    "ignoreMultipress=\"1\""
+    "keybinding0_0=\"285\""
+    "keybinding0_1=\"282\""
+    "keybinding0_10=\"262\""
+    "keybinding0_11=\"263\""
+    "keybinding0_12=\"-1\""
+    "keybinding0_13=\"-1\""
+    "keybinding0_14=\"-1\""
+    "keybinding0_15=\"-1\""
+    "keybinding0_2=\"283\""
+    "keybinding0_3=\"284\""
+    "keybinding0_4=\"258\""
+    "keybinding0_5=\"259\""
+    "keybinding0_6=\"256\""
+    "keybinding0_7=\"260\""
+    "keybinding0_8=\"257\""
+    "keybinding0_9=\"261\""
+)
+
+# If the XML file does not exist (new data) create one and fill the contents
+if [[ ! -f "$XML_FILE" ]]; then
+    echo "No save data found, creating one with keybinds."
+    echo -n '<?xml?><necrodancer><player numCoins="0" numDiamonds="0" v="2" weapon_daggerUsed="true"></player><game DLCPlayed="true" audioLatency="0" autocalibration="-5" charUnlocked0="1" charUnlocked10="1" charUnlocked12="1" charUnlocked13="1" charUnlocked14="1" charUnlocked9="1" enableVsync="1" fullscreen="1" haveShownChangelogForVersion2059="1" ignoreMultipress="0" keybinding0_0="285" keybinding0_1="282" keybinding0_10="262" keybinding0_11="263" keybinding0_12="-1" keybinding0_13="-1" keybinding0_14="-1" keybinding0_15="-1" keybinding0_2="283" keybinding0_3="284" keybinding0_4="258" keybinding0_5="259" keybinding0_6="256" keybinding0_7="260" keybinding0_8="257" keybinding0_9="261" latencyCalibrated="true" resolutionH="0" resolutionW="0" shownSeizureWarning="1" videoLatency="0"></game><npc></npc></necrodancer>' > "$XML_FILE"
+else
+    echo "Found save data, checking keybinds."
+    # Loop through the keybinding data
+    for entry in "${KEYBINDINGS[@]}"; do
+        key="${entry%%=*}"  # Extract key
+        value="${entry#*=}"  # Extract value
+        # Check if the key exists in the file and update it
+        if grep -q -E "($key)=\"[^\"]*\"" "$XML_FILE"; then
+            # Update the existing key's value
+            sed -i "s/\($key=\"\)[^\"]*\(\"$\)/\1$value\2/" "$XML_FILE"
+        fi
+    done
+fi

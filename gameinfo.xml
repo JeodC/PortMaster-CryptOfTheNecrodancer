@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gamelist>
+	<game>
+		<path>./Crypt of the Necrodancer.sh</path>
+		<name>Crypt of the Necrodancer</name>
+		<desc>Crypt of the NecroDancer is an award winning hardcore roguelike rhythm game. Move to the music and deliver beatdowns to the beat! Groove to the epic Danny Baranowsky soundtrack, or select songs from your own MP3 collection!Crypt of the NecroDancer is an award winning hardcore roguelike rhythm game. Move to the music and deliver beatdowns to the beat! Groove to the epic Danny Baranowsky soundtrack, or select songs from your own MP3 collection!</desc>
+		<image>./necrodancer/cover.png</image>
+		<releasedate>20150423</releasedate>
+		<developer>Brace Yourself Games</developer>
+		<genre>Action, Indie, RPG</genre>
+	</game>
+</gamelist>

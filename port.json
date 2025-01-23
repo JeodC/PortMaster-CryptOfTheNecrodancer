@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "name": "necrodancer.zip",
+  "items": [
+    "Crypt of the Necrodancer.sh",
+    "necrodancer"
+  ],
+  "items_opt": [],
+  "attr": {
+    "title": "Crypt of the Necrodancer",
+    "porter": [
+      "Jeod"
+    ],
+    "desc": "Crypt of the NecroDancer is an award winning hardcore roguelike rhythm game. Move to the music and deliver beatdowns to the beat! Groove to the epic Danny Baranowsky soundtrack, or select songs from your own MP3 collection!Crypt of the NecroDancer is an award winning hardcore roguelike rhythm game. Move to the music and deliver beatdowns to the beat! Groove to the epic Danny Baranowsky soundtrack, or select songs from your own MP3 collection!",
+    "desc_md": null,
+    "inst": "Buy the game on GOG and copy all the data to `necrodancer/data`.",
+    "inst_md": null,
+    "genres": [
+      "action",
+	  "rpg"
+    ],
+    "image": null,
+    "rtr": true,
+    "exp": false,
+    "runtime": null,
+    "reqs": [],
+    "arch": [
+      "aarch64"
+    ]
+  }
+}
