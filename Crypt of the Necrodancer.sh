@@ -13,7 +13,7 @@ source $controlfolder/control.txt
 get_controls
 
 # Variables
-GAMEDIR=/$directory/ports/necrodancer
+GAMEDIR="/$directory/windows/necrodancer"
 
 # CD and set permissions
 cd $GAMEDIR/data
